@@ -19,6 +19,7 @@
 
 \DeclareMathOperator{\sqf}{sqf}
 \newcommand{\Art}{\mathrm{A}}
+\newcommand{\E}{\mathbb{E}}
 \newcommand{\Leg}[2]{\left(\frac{#1}{#2}\right)}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -39,7 +40,8 @@ characters, prime discriminants, Lemke Oliver--Soundararajan bias}
 \date{September 10, 2026}
 
 \begin{abstract}
-Say that an odd prime $p$ is \emph{Artin base $a$} if $a$ is a primitive root
+Let $a \ge 2$ be a non-square integer with squarefree part $d$, and say that
+an odd prime $p$ is \emph{Artin base $a$} if $a$ is a primitive root
 modulo $p$. (We restrict to odd primes throughout: modulo $2$ every odd
 integer trivially has full multiplicative order, and the quadratic obstruction
 below fails there.) Membership in $\Art_a$ forces the quadratic character value
@@ -123,7 +125,11 @@ taking $a = 33$, the primes $2$ and $13$ both have $33$ as a primitive root
 even though their gap $11$ lies in a reversing class modulo the conductor
 $33$. Every statement below therefore concerns odd primes only, as the
 hypotheses of Lemma~\ref{lem:obstruction} and Theorem~\ref{thm:exclusion}
-already record. All results above
+already record. Recent work continues in the same single-prime direction: J\"arviniemi,
+Perucca and Sgobba~\cite{JarviniemiPeruccaSgobba2025} give a unified treatment
+of Artin-type density problems, and Kimmel~\cite{Kimmel2024} treats Artin's
+conjecture in number fields and for matrices; the Artin-density conclusions in
+both are conditional on GRH. All results above
 concern a \emph{single} prime at a time. The behaviour of Artin primes in
 \emph{pairs} has been studied much less. Garcia, Kahoro and
 Luca~\cite{GarciaKahoroLuca2019} (see also~\cite{GarciaLucaShiUdell2020})
@@ -179,8 +185,10 @@ Accordingly, ``base $a$ admits no exclusion class'' below always abbreviates
 doubly-Artin pairs actually occur at the remaining gaps is a different and
 harder problem, of the type addressed under GRH in~\cite{Pollack2014}; we do
 not address it. The empirical sections confirm that doubly-Artin pairs are
-abundant outside the exclusion classes, but abundance in a finite range is not
-an existence theorem.
+abundant outside the exclusion classes; such observations do establish
+existence for the configurations actually exhibited, but abundance in a finite
+range is neither an infinitude theorem nor an existence theorem for every
+remaining gap class.
 
 \subsection*{Relation to Tinkov\'a--Waxman--Zindulka}
 \label{sec:twz}
@@ -266,8 +274,11 @@ status of a pair of primes. We note that our own search initially missed
 base $g$, reversing the roles those letters play here; the omission was caught
 in adversarial review.
 
-Our main theorem determines, for every base, exactly which gap classes are
-quadratic exclusion classes, with the converse direction included.
+The reversing classes are determined by the following theorem; combined with
+the exhaustion proposition (Proposition~\ref{prop:exhaustion}) and the
+inadmissibility count (Theorem~\ref{thm:inadmissible}), which supplies the
+exceptional case $d = 5$, this determines the full set of quadratic exclusion
+classes for every base.
 
 \begin{theorem}[Classification of reversing classes; see
 Theorem~\ref{thm:classification}]
@@ -356,7 +367,7 @@ statistical one. For a base $a$ define the consecutive-pair correlation
 \end{equation}
 computed over consecutive primes $p_n < p_{n+1} \le x$. The bias of
 Lemke Oliver and Soundararajan~\cite{LOS2016} in the joint distribution of
-$(p_n \bmod m, p_{n+1} \bmod m)$ propagates, through the factorization of
+$(p_n \bmod m, p_{n+1} \bmod m)$ may propagate, through the factorization of
 $p - 1$, into Artin status, so one expects $\delta(a) \neq 0$; and indeed we
 find $\delta(a) < 0$ for all eleven bases examined.
 
@@ -402,7 +413,18 @@ describing the results. Where a $z$-score appears in Table~\ref{tab:delta} it
 is a nominal, descriptive scale factor computed under a binomial reference
 model that is certainly false here --- consecutive pairs overlap, and the
 population is deterministic --- and it should be read only as the ratio of the
-effect to that reference scale, not as a test of any hypothesis. The precision
+effect to that reference scale, not as a test of any hypothesis. For
+definiteness, with $n_{ij}$ as in Section~\ref{sec:delta}, write
+$r_A = n_{10} + n_{11}$, $r_N = n_{00} + n_{01}$,
+$\widehat{p}_{A} = n_{11}/r_A$ and $\widehat{p}_{N} = n_{01}/r_N$; then
+\[
+  z = \frac{\widehat{p}_A - \widehat{p}_N}{s},
+  \qquad
+  s = \sqrt{\frac{\widehat{p}_A(1 - \widehat{p}_A)}{r_A}
+           + \frac{\widehat{p}_N(1 - \widehat{p}_N)}{r_N}}\,,
+\]
+that is, separate fitted proportions rather than a pooled one, and no
+continuity correction. The precision
 of the quoted digits of $\delta$ rests on the counts being exact integers, not
 on any $z$-value. Correlations across the eleven bases are descriptive summaries of
 eleven points, not estimates from a random sample of bases.
@@ -415,7 +437,7 @@ Section~\ref{sec:formal} describes the machine verification.
 Section~\ref{sec:computation} describes the computation.
 Section~\ref{sec:verification} reports the verification of the exclusion law at
 $10^9$. Section~\ref{sec:delta} reports the measurement of $\delta(a)$, the
-refutation of the exclusion-density hypothesis, and the conductor
+failure of exclusion weight to order these data, and the conductor
 regularity. Section~\ref{sec:discussion} discusses what we take the
 consequences to be.
 
@@ -504,16 +526,19 @@ corresponding prime is not Artin base $a$.
 
 Theorem~\ref{thm:exclusion} is unconditional and its proof is three lines; the
 content lies in determining the reversing classes, which we now do. Recall that
-every discriminant $D$ factors uniquely as a product of \emph{prime
-discriminants}
+every fundamental discriminant $D$ factors uniquely as a product of
+\emph{prime discriminants}
 \begin{equation}
 \label{eq:primedisc}
   D = D_1 D_2 \cdots D_k, \qquad
   D_i \in \{-4\} \cup \{8, -8\} \cup \{\, q^* : q \text{ odd prime} \,\},
 \end{equation}
-where $q^* = q$ if $q \equiv 1 \pmod 4$ and $q^* = -q$ if $q \equiv 3 \pmod 4$;
+where $q^* = q$ if $q \equiv 1 \pmod 4$ and $q^* = -q$ if $q \equiv 3 \pmod 4$
+(throughout $\chi_a = \Leg{D}{\cdot}$ is the \emph{Kronecker} symbol, which is
+defined at the even arguments occurring for odd conductors, as distinct from
+the Legendre symbol $\Leg{\cdot}{q}$ of the component lemma);
 the odd $D_i$ are precisely the $q^*$ for the odd primes $q \mid d$, and a
-factor $\pm 4, \pm 8$ occurs according to $d \bmod 8$. Correspondingly
+$2$-primary factor $-4$, $8$ or $-8$ occurs according to $d \bmod 8$. Correspondingly
 $\chi_a = \prod_i \chi_{D_i}$, with $\chi_{D_i}$ of conductor $|D_i|$.
 
 \begin{table}[t]
@@ -1221,13 +1246,15 @@ $7$  & $28$ & $1$ & $0.0702$ & $-0.013491$ & $-96.4$ \\
 \end{tabular}
 \end{table}
 
-Two features stand out. First, $\delta(a) < 0$ for every base: consecutive
-primes \emph{repel} in Artin status, uniformly in the base. This is consistent
+Two features stand out. First, $\delta(a) < 0$ for all eleven bases examined at this bound:
+consecutive primes \emph{repel} in Artin status in every case measured. This is consistent
 with the mechanism proposed for the base-$10$ case, namely that the
 Lemke Oliver--Soundararajan bias~\cite{LOS2016} in the joint distribution of
 consecutive prime residues propagates through the factorization of $p-1$ ---
-and hence through $\omega(p-1)$, whose consecutive values are themselves
-anticorrelated --- into Artin status.
+and, on that proposed route, through $\omega(p-1)$, whose consecutive values
+are measured to be anticorrelated at $10^9$ in the companion base-$10$
+study --- into Artin status. This is a proposed route, not an established one:
+no decomposition exhibiting the transmission is given here.
 
 Second, and contrary to what the first half of this paper might suggest, the
 ordering of $|\delta(a)|$ is not explained by the exclusion law.
@@ -1339,10 +1366,22 @@ We stress that Observation~\ref{obs:conductor} is at present a purely empirical
 regularity, and we indicate what a derivation would involve. Let $X$ and $Y$
 be the Artin indicators of $p_n$ and $p_{n+1}$. Then
 $\delta(a) = \operatorname{Cov}(X, Y) / \bigl(P(X=1)(1 - P(X=1))\bigr)$, so it
-suffices to model the covariance. Assuming that $X$ and $Y$ are conditionally
-independent given the residue pair $(p_n, p_{n+1}) \bmod f$ --- an
-approximation, since the factorizations of $p_n - 1$ and $p_{n+1} - 1$ share
-structure not captured by residues modulo $f$ --- one obtains
+suffices to model the covariance. Write $R = p_n \bmod f$ and $S = p_{n+1} \bmod f$. The exact decomposition is
+\[
+  \operatorname{Cov}(X, Y)
+   = \E\bigl[\operatorname{Cov}(X, Y \mid R, S)\bigr]
+   + \operatorname{Cov}\bigl(\E[X \mid R, S],\ \E[Y \mid R, S]\bigr),
+\]
+and three separate approximations are needed to reach a usable model. First,
+that the conditional covariance term vanishes, which is false in general
+because the factorizations of $p_n - 1$ and $p_{n+1} - 1$ share structure not
+captured by residues modulo $f$. Second, a locality assumption:
+$\E[X \mid R, S] \approx m(R)$ and $\E[Y \mid R, S] \approx m(S)$, so that a
+prime's Artin status depends on its neighbour's residue only through its own.
+This does \emph{not} follow from conditional independence, and the restriction
+to \emph{consecutive} pairs makes it particularly nonautomatic. Third, that
+the two finite marginals may be replaced by a common asymptotic one. Granting
+all three, and omitting the finitely many primes dividing $f$,
 \[
   \operatorname{Cov}(X, Y) \;\approx\; \sum_{r, s \,\in\, (\Z/f\Z)^\times}
      \Bigl( \pi(r, s) - \pi(r)\pi(s) \Bigr)\,
@@ -1350,8 +1389,9 @@ structure not captured by residues modulo $f$ --- one obtains
 \]
 where $\pi(r, s)$ is the density of consecutive prime pairs with
 $p_n \equiv r$, $p_{n+1} \equiv s \pmod f$, and $\alpha_a(r)$ is the deviation
-of the Artin density in the class $r$ from its mean; a residual term from the
-failure of conditional independence has been dropped. The first factor is
+of the Artin density in the class $r$ from its mean. We emphasise that this is
+a heuristic assembled from those three assumptions, not a consequence of
+conditional independence alone. The first factor is
 governed, conjecturally, by the Hardy--Littlewood singular
 series~\cite{HardyLittlewood1923} through the conjectural formula of Lemke
 Oliver--Soundararajan~\cite[Conj.~1.1]{LOS2016} for prime transitions in
@@ -1361,10 +1401,18 @@ $\chi_a(r) = -1$ is the leading constraint. Carrying this out --- in particular
 extracting the $f$-dependence of the double sum, where the number of channels
 $\varphi(f)^2$ competes against the per-channel bias --- would replace the
 measured correlations above with a formula and settle the exponent question.
-We have not done this here: the LOS transition term for \emph{consecutive}
-(rather than merely distinct) primes in fixed residue classes involves a
-secondary term with no closed form, and the interaction with the
-$\omega(p-1)$ channel (through which the bias reaches Artin status) is not
+We have not done this here. The obstacle is not a missing formula: Lemke
+Oliver and Soundararajan give explicit secondary terms for consecutive primes
+in fixed residue classes, both on the diagonal and in the symmetrised
+off-diagonal combination~\cite[Conj.~1.1]{LOS2016}, and since the weight
+$\alpha_a(r)\alpha_a(s)$ proposed above is symmetric in $(r,s)$ it is exactly
+the symmetrised coefficient that enters, so the antisymmetric part does not
+obstruct. Indeed~\cite[Conj.~1.3]{LOS2016} treats the shifted quadratic
+character correlation $\sum_{p_n \le x} \Leg{p_n}{q}\Leg{p_{n+1}}{q}$ along
+consecutive primes directly. What remains undone is the harder part: justifying
+the conditional means that convert those transition counts into Artin
+statements, and controlling the dependence dropped above, including a possible
+$\omega(p-1)$ contribution which there is no reason to expect to be
 multiplicative. The calculation appears feasible but is a paper of its own,
 and we leave it as the first item of future work.
 
@@ -1387,8 +1435,11 @@ Observation~\ref{obs:refutation}).}
 We deliberately refrain from asserting an exact power law. Across the eleven
 bases the products $|\delta| \cdot f$ range over $0.333$ to $0.832$, while
 $|\delta| \cdot \sqrt{f}$ range over $0.0714$ to $0.1757$; the latter is the
-narrower band, so $f^{-1/2}$ is the better one-parameter description, but
-neither product is constant and neither varies monotonically with $f$. The
+narrower band in absolute terms, but we draw no model-selection conclusion
+from that comparison, since the two products live on different scales and each
+carries its own fitted multiplicative constant, so their raw widths are not
+commensurable measures of fit to $|\delta|$. Neither product is constant and
+neither varies monotonically with $f$. The
 extremes of the $|\delta|\sqrt{f}$ band are $a = 7$ ($0.0714$) and $a = 21$
 ($0.1757$), a factor of $2.5$ apart, so the fitted constant $C = 0.132$ in
 Figure~\ref{fig:conductor} summarises a genuinely dispersed set of values.
@@ -1436,10 +1487,12 @@ fixed-shift literature and that we believe to be new.
 
 We call attention to a corrective aspect of (ii). An earlier version of this
 paper classified only the reversing mechanism and asserted that base $5$
-admits no exclusion law. The data refuted the assertion --- twenty million
-consecutive pairs at gaps $g \equiv 2, 3 \pmod 5$ with a zero doubly-Artin
-count is not a subtle signal --- and the inadmissibility mechanism was found
-by asking what the classification had missed. That same earlier version
+admits no exclusion law. The census prompted the re-examination --- twenty million consecutive pairs at
+gaps $g \equiv 2, 3 \pmod 5$ with a zero doubly-Artin count is not a subtle
+signal --- and the inadmissibility mechanism was found by asking what the
+classification had missed. The refutation itself is the residue count of
+Theorem~\ref{thm:inadmissible}: a zero census count, however extensive, cannot
+by itself establish that an obstruction is present. That same earlier version
 contained two further defects, both since corrected: the count of
 Theorem~\ref{thm:inadmissible} was stated without the hypothesis
 $g \not\equiv 0 \pmod d$, under which it is false and not even
@@ -1455,7 +1508,8 @@ catch implementation errors, and instead caught a theorem-level gap.
 
 \subsection*{Relation to earlier work}
 For base $10$ the exclusion class $g \equiv 20 \pmod{40}$ and a measurement of
-$\delta(10)$ were obtained by the author in earlier work; the present paper
+$\delta(10)$ were obtained by the author in earlier
+work~\cite{BaldConsecutive}; the present paper
 subsumes that case, since $d = 10$ gives $D = 40 = 5 \cdot 8$ and
 Theorem~\ref{thm:classification} returns the single exclusion class
 $g \equiv 20$.
@@ -1536,7 +1590,8 @@ as preserving at $g \equiv 2 \pmod 8$; the error was detected by exhaustive
 computational comparison and corrected before any proof was written. The
 hypothesis refuted in Observation~\ref{obs:refutation} was originally
 proposed, with a plausible heuristic, in the course of that assisted
-exploration; it was tested and rejected on the evidence. Conversely, three
+exploration; it was tested, in the specific form of a monotone ordering of $|\delta|$ by
+exclusion weight across these eleven bases, and failed in that form. Conversely, three
 errors that survived into a previous version of this paper --- the missing
 hypothesis in Theorem~\ref{thm:inadmissible}, the invalid composite case of
 Corollary~\ref{cor:complete}, and a false assertion about twin primes in the
@@ -1580,6 +1635,12 @@ additionally requires a \texttt{mathlib} binary cache.
 R.~C. Baker and P.~Pollack,
 \emph{Bounded gaps between primes with a given primitive root, II},
 Forum Math. \textbf{28} (2016), no.~4, 675--687.
+
+\bibitem{BaldConsecutive}
+J.~Bald,
+\emph{Correlations between primitive root statuses of consecutive primes},
+preprint (2026);
+\url{https://github.com/jpbald93/consecutive-primitive-roots}.
 
 \bibitem{FanPollack2025}
 K.~(S.)~Fan and P.~Pollack,
