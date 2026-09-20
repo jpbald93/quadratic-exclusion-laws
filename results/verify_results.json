@@ -1,0 +1,126 @@
+{
+  "2": {
+    "conductor": 8,
+    "flip": {
+      "4": {
+        "pairs": 57786,
+        "doubly_artin": 0
+      }
+    },
+    "control": {
+      "0": {
+        "pairs": 35704,
+        "doubly_artin": 9698
+      }
+    }
+  },
+  "3": {
+    "conductor": 12,
+    "flip": {
+      "4": {
+        "pairs": 34800,
+        "doubly_artin": 0
+      },
+      "6": {
+        "pairs": 57812,
+        "doubly_artin": 0
+      },
+      "8": {
+        "pairs": 24393,
+        "doubly_artin": 0
+      }
+    },
+    "control": {
+      "0": {
+        "pairs": 34297,
+        "doubly_artin": 9735
+      },
+      "2": {
+        "pairs": 37959,
+        "doubly_artin": 10126
+      }
+    }
+  },
+  "6": {
+    "conductor": 24,
+    "flip": {
+      "8": {
+        "pairs": 16785,
+        "doubly_artin": 0
+      },
+      "12": {
+        "pairs": 25118,
+        "doubly_artin": 0
+      },
+      "16": {
+        "pairs": 9740,
+        "doubly_artin": 0
+      }
+    },
+    "control": {
+      "0": {
+        "pairs": 9179,
+        "doubly_artin": 2709
+      },
+      "4": {
+        "pairs": 25060,
+        "doubly_artin": 6753
+      }
+    }
+  },
+  "7": {
+    "conductor": 28,
+    "flip": {
+      "14": {
+        "pairs": 13492,
+        "doubly_artin": 0
+      }
+    },
+    "control": {
+      "0": {
+        "pairs": 4163,
+        "doubly_artin": 1072
+      }
+    }
+  },
+  "10": {
+    "conductor": 40,
+    "flip": {
+      "20": {
+        "pairs": 7222,
+        "doubly_artin": 0
+      }
+    },
+    "control": {
+      "0": {
+        "pairs": 1512,
+        "doubly_artin": 401
+      }
+    }
+  },
+  "11": {
+    "conductor": 44,
+    "flip": {
+      "22": {
+        "pairs": 6361,
+        "doubly_artin": 0
+      }
+    },
+    "control": {
+      "0": {
+        "pairs": 708,
+        "doubly_artin": 193
+      }
+    }
+  },
+  "21": {
+    "conductor": 21,
+    "flip": {
+      "14": {
+        "pairs": 11829,
+        "doubly_artin": 0
+      }
+    },
+    "control": {}
+  }
+}

@@ -1,0 +1,299 @@
+[
+  {
+    "base": 2,
+    "conductor": 8,
+    "flip_shifts": [
+      4
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 4
+  },
+  {
+    "base": 3,
+    "conductor": 12,
+    "flip_shifts": [
+      4,
+      6,
+      8
+    ],
+    "preserve_shifts": [
+      0,
+      2,
+      10
+    ],
+    "classes": 4
+  },
+  {
+    "base": 4,
+    "square": true
+  },
+  {
+    "base": 5,
+    "conductor": 5,
+    "flip_shifts": [],
+    "preserve_shifts": [],
+    "classes": 4
+  },
+  {
+    "base": 6,
+    "conductor": 24,
+    "flip_shifts": [
+      8,
+      12,
+      16
+    ],
+    "preserve_shifts": [
+      0,
+      4,
+      20
+    ],
+    "classes": 8
+  },
+  {
+    "base": 7,
+    "conductor": 28,
+    "flip_shifts": [
+      14
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 12
+  },
+  {
+    "base": 8,
+    "conductor": 8,
+    "flip_shifts": [
+      4
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 4
+  },
+  {
+    "base": 9,
+    "square": true
+  },
+  {
+    "base": 10,
+    "conductor": 40,
+    "flip_shifts": [
+      20
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 16
+  },
+  {
+    "base": 11,
+    "conductor": 44,
+    "flip_shifts": [
+      22
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 20
+  },
+  {
+    "base": 12,
+    "conductor": 12,
+    "flip_shifts": [
+      4,
+      6,
+      8
+    ],
+    "preserve_shifts": [
+      0,
+      2,
+      10
+    ],
+    "classes": 4
+  },
+  {
+    "base": 13,
+    "conductor": 13,
+    "flip_shifts": [],
+    "preserve_shifts": [],
+    "classes": 12
+  },
+  {
+    "base": 14,
+    "conductor": 56,
+    "flip_shifts": [
+      28
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 24
+  },
+  {
+    "base": 15,
+    "conductor": 60,
+    "flip_shifts": [
+      20,
+      30,
+      40
+    ],
+    "preserve_shifts": [
+      0,
+      10,
+      50
+    ],
+    "classes": 16
+  },
+  {
+    "base": 16,
+    "square": true
+  },
+  {
+    "base": 17,
+    "conductor": 17,
+    "flip_shifts": [],
+    "preserve_shifts": [],
+    "classes": 16
+  },
+  {
+    "base": 18,
+    "conductor": 8,
+    "flip_shifts": [
+      4
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 4
+  },
+  {
+    "base": 19,
+    "conductor": 76,
+    "flip_shifts": [
+      38
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 36
+  },
+  {
+    "base": 20,
+    "conductor": 5,
+    "flip_shifts": [],
+    "preserve_shifts": [],
+    "classes": 4
+  },
+  {
+    "base": 21,
+    "conductor": 21,
+    "flip_shifts": [
+      14
+    ],
+    "preserve_shifts": [],
+    "classes": 12
+  },
+  {
+    "base": 22,
+    "conductor": 88,
+    "flip_shifts": [
+      44
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 40
+  },
+  {
+    "base": 23,
+    "conductor": 92,
+    "flip_shifts": [
+      46
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 44
+  },
+  {
+    "base": 24,
+    "conductor": 24,
+    "flip_shifts": [
+      8,
+      12,
+      16
+    ],
+    "preserve_shifts": [
+      0,
+      4,
+      20
+    ],
+    "classes": 8
+  },
+  {
+    "base": 25,
+    "square": true
+  },
+  {
+    "base": 26,
+    "conductor": 104,
+    "flip_shifts": [
+      52
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 48
+  },
+  {
+    "base": 27,
+    "conductor": 12,
+    "flip_shifts": [
+      4,
+      6,
+      8
+    ],
+    "preserve_shifts": [
+      0,
+      2,
+      10
+    ],
+    "classes": 4
+  },
+  {
+    "base": 28,
+    "conductor": 28,
+    "flip_shifts": [
+      14
+    ],
+    "preserve_shifts": [
+      0
+    ],
+    "classes": 12
+  },
+  {
+    "base": 29,
+    "conductor": 29,
+    "flip_shifts": [],
+    "preserve_shifts": [],
+    "classes": 28
+  },
+  {
+    "base": 30,
+    "conductor": 120,
+    "flip_shifts": [
+      40,
+      60,
+      80
+    ],
+    "preserve_shifts": [
+      0,
+      20,
+      100
+    ],
+    "classes": 32
+  }
+]

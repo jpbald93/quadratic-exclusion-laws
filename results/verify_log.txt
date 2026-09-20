@@ -1,0 +1,21 @@
+primes loaded: 216814
+base 2 (f=8) shift 4: pairs=57786 doubly_artin=0
+  CONTROL base 2 shift 0 (preserve): pairs=35704 doubly_artin=9698
+base 3 (f=12) shift 4: pairs=34800 doubly_artin=0
+base 3 (f=12) shift 6: pairs=57812 doubly_artin=0
+base 3 (f=12) shift 8: pairs=24393 doubly_artin=0
+  CONTROL base 3 shift 0 (preserve): pairs=34297 doubly_artin=9735
+  CONTROL base 3 shift 2 (preserve): pairs=37959 doubly_artin=10126
+base 6 (f=24) shift 8: pairs=16785 doubly_artin=0
+base 6 (f=24) shift 12: pairs=25118 doubly_artin=0
+base 6 (f=24) shift 16: pairs=9740 doubly_artin=0
+  CONTROL base 6 shift 0 (preserve): pairs=9179 doubly_artin=2709
+  CONTROL base 6 shift 4 (preserve): pairs=25060 doubly_artin=6753
+base 7 (f=28) shift 14: pairs=13492 doubly_artin=0
+  CONTROL base 7 shift 0 (preserve): pairs=4163 doubly_artin=1072
+base 10 (f=40) shift 20: pairs=7222 doubly_artin=0
+  CONTROL base 10 shift 0 (preserve): pairs=1512 doubly_artin=401
+base 11 (f=44) shift 22: pairs=6361 doubly_artin=0
+  CONTROL base 11 shift 0 (preserve): pairs=708 doubly_artin=193
+base 21 (f=21) shift 14: pairs=11829 doubly_artin=0
+done

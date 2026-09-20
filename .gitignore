@@ -1,0 +1,7 @@
+*.aux
+*.log
+*.out
+*.synctex.gz
+lean/.lake/
+__pycache__/
+*.csv
