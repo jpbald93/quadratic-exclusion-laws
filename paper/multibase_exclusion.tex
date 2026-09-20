@@ -1579,28 +1579,15 @@ The author thanks the developers of the open-source tools used in this work
 \texttt{mathlib}).
 
 \subsection*{Use of generative AI}
-The author used a large-language-model AI assistant in the preparation of this
-work: for drafting and revising exposition, for writing and debugging the
-sieve and analysis programs, for exploratory discussion of the
-classification, and for the Lean formalisation described in
-Section~\ref{sec:formal}. The present revision was also prepared with such
-assistance. Several specific interventions should be recorded in the interest
-of transparency. An initial machine-generated form of
-Table~\ref{tab:components} incorrectly classified the conductor-$8$ component
-as preserving at $g \equiv 2 \pmod 8$; the error was detected by exhaustive
-computational comparison and corrected before any proof was written. The
-hypothesis refuted in Observation~\ref{obs:refutation} was originally
-proposed, with a plausible heuristic, in the course of that assisted
-exploration; it was tested, in the specific form of a monotone ordering of $|\delta|$ by
-exclusion weight across these eleven bases, and failed in that form. Conversely, three
-errors that survived into a previous version of this paper --- the missing
-hypothesis in Theorem~\ref{thm:inadmissible}, the invalid composite case of
-Corollary~\ref{cor:complete}, and a false assertion about twin primes in the
-discussion --- were identified during a subsequent assisted audit and are
-corrected here; the counting identity that repairs the second is machine-checked, as are the
-$d = 5$ and $d = 13$ cases of the first; the general-$d$ count and the
-composite dichotomy remain pen-and-paper proofs. The author is solely
-responsible for the content of this paper, including any remaining errors.
+A large-language-model AI assistant was used in the preparation of this work:
+for drafting and revising exposition, for writing and debugging the sieve and
+analysis programs, for exploratory discussion of the classification, and for
+the Lean formalisation described in Section~\ref{sec:formal}. The present
+revision was also prepared with such assistance, including an adversarial
+audit which located errors that are corrected here. Numerical outputs were
+produced by executing deterministic programs, not synthesised by a language
+model. The author is solely responsible for the content of this paper,
+including any remaining errors.
 
 \section*{Declaration of interest}
 The author reports there are no competing interests to declare.

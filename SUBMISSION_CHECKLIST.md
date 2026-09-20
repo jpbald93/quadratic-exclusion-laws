@@ -7,14 +7,14 @@ Built from the current `paper/multibase_exclusion.tex` by
 
 | file | what it is |
 |---|---|
-| `multibase_exclusion_manuscript.pdf` | named manuscript, 23 pp |
+| `multibase_exclusion_manuscript.pdf` | named manuscript, 22 pp |
 | `multibase_exclusion_anonymous.pdf` | anonymised (author, email, ORCID, repo URL stripped; PDF metadata cleared) |
 | `multibase_exclusion_source.zip` | flat named LaTeX source + figure, compiles standalone |
 | `multibase_exclusion_reproduction.zip` | portable package: code, paper, results, Lean sources |
 
 ## Gates that passed at build time
 
-- Manuscript build: **23 pp, 0 overfull/underfull boxes, 0 undefined references**.
+- Manuscript build: **22 pp, 0 overfull/underfull boxes, 0 undefined references**.
 - Anonymous PDF: **no identifying text**, and Author/Title/Subject/Keywords/Creator
   metadata fields empty.
 - Source zip compiles standalone.

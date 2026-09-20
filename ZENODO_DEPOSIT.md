@@ -111,7 +111,7 @@ Verified: neither zip contains private correspondence.
 
 ## State at time of writing
 
-- 23 pp, 0 overfull/underfull boxes, 0 undefined references
+- 22 pp, 0 overfull/underfull boxes, 0 undefined references
 - `MANIFEST.sha256` 58/58 verify
 - `code/artifact_gate.sh` → **ARTIFACT GATE: PASS**
 - `code/regenerate_all.py` → **PASS (20 checks)**
